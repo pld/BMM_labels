@@ -1,0 +1,17 @@
+Original code availble here, http://staff.science.uva.nl/~gideon/
+Modified Spring 2011
+
+Syntax:
+BMM_labels plain_textfile span_file [postag] [dirichlet] [multigrams] [lookahead=la] [beam=b] 
+
+plain_textfile (obligatory) is the full path to a file containing unlabeled sentences. Every sentence should end with a space and a .
+If the file consists of postag sequences, the `postag' flag should be marked; default is lexical sequences.
+
+span_file is a textfile containing Gold Standard spans corresponding to and in the same order as the the sentences in  plain_textfile.
+The lines should be formatted as in the following example: 0-8 0-3 1-3 4-8 5-8 6-8, where every entry represents the span of a constituent in the Gold Standard parse. Spans over single words are ignored.
+
+Options may be added in any order, and are not case sensitive:
+postag: indicates that sentences in the input file are postag sequences. default = false.
+dirichlet: indicates the use of the Dirichlet prior. default = false.
+multigrams: sets a flag that allows the induction of chunks consisting of more than two and up to 4 consecutive no
+
